@@ -2866,6 +2866,9 @@ TriaAccessor<0, 1, spacedim>::set_boundary_id (const types::boundary_id b)
   Assert (tria->vertex_to_boundary_id_map_1d->find (this->vertex_index())
           != tria->vertex_to_boundary_id_map_1d->end(),
           ExcInternalError());
+  Assert ((*tria->vertex_to_boundary_id_map_1d)[this->vertex_index()]==b ||
+          (*tria->vertex_to_boundary_id_map_1d)[this->vertex_index()]!=numbers::internal_face_boundary_id,
+          ExcInternalError());
 
   (*tria->vertex_to_boundary_id_map_1d)[this->vertex_index()] = b;
 }

@@ -376,7 +376,7 @@ public:
   virtual ~ZeroFunction ();
 
   virtual Number value (const Point<dim>   &p,
-                        const unsigned int  component) const;
+                        const unsigned int  component = 0) const;
 
   virtual void vector_value (const Point<dim> &p,
                              Vector<Number>   &return_value) const;
@@ -456,7 +456,7 @@ public:
   virtual ~ConstantFunction ();
 
   virtual Number value (const Point<dim>   &p,
-                        const unsigned int  component) const;
+                        const unsigned int  component = 0) const;
 
   virtual void vector_value (const Point<dim> &p,
                              Vector<Number>   &return_value) const;
